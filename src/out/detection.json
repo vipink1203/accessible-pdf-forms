@@ -1,0 +1,286 @@
+{
+  "fields": [
+    {
+      "bbox": [
+        148,
+        210,
+        1134,
+        262
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "1 Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner's name on line 1, and enter the business/disregarded entity's name on line 2.)"
+    },
+    {
+      "bbox": [
+        148,
+        268,
+        1134,
+        311
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "2 Business name/disregarded entity name, if different from above."
+    },
+    {
+      "bbox": [
+        146,
+        360,
+        168,
+        382
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a Individual/sole proprietor"
+    },
+    {
+      "bbox": [
+        389,
+        360,
+        411,
+        382
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a C corporation"
+    },
+    {
+      "bbox": [
+        534,
+        360,
+        556,
+        382
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a S corporation"
+    },
+    {
+      "bbox": [
+        676,
+        360,
+        698,
+        382
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a Partnership"
+    },
+    {
+      "bbox": [
+        810,
+        360,
+        832,
+        382
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a Trust/estate"
+    },
+    {
+      "bbox": [
+        146,
+        390,
+        168,
+        412
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)"
+    },
+    {
+      "bbox": [
+        720,
+        390,
+        908,
+        412
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)"
+    },
+    {
+      "bbox": [
+        146,
+        463,
+        168,
+        485
+      ],
+      "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+      "kind": "checkbox",
+      "label": "3a Other (see instructions)"
+    },
+    {
+      "bbox": [
+        296,
+        463,
+        530,
+        485
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "3a Other (see instructions)"
+    },
+    {
+      "bbox": [
+        884,
+        521,
+        906,
+        543
+      ],
+      "group": "",
+      "kind": "checkbox",
+      "label": "3b If on line 3a you checked \"Partnership\" or \"Trust/estate,\" or checked \"LLC\" and entered \"P\" as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions"
+    },
+    {
+      "bbox": [
+        994,
+        392,
+        1134,
+        408
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "4 Exempt payee code (if any)"
+    },
+    {
+      "bbox": [
+        976,
+        472,
+        1134,
+        488
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "4 Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any)"
+    },
+    {
+      "bbox": [
+        148,
+        567,
+        772,
+        607
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "5 Address (number, street, and apt. or suite no.). See instructions."
+    },
+    {
+      "bbox": [
+        795,
+        567,
+        1134,
+        651
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Requester's name and address (optional)"
+    },
+    {
+      "bbox": [
+        148,
+        615,
+        772,
+        655
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "6 City, state, and ZIP code"
+    },
+    {
+      "bbox": [
+        398,
+        673,
+        1134,
+        699
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "7 List account number(s) here (optional)"
+    },
+    {
+      "bbox": [
+        826,
+        780,
+        908,
+        824
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Social security number"
+    },
+    {
+      "bbox": [
+        932,
+        780,
+        986,
+        824
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Social security number"
+    },
+    {
+      "bbox": [
+        1010,
+        780,
+        1134,
+        824
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Social security number"
+    },
+    {
+      "bbox": [
+        826,
+        869,
+        880,
+        913
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Employer identification number"
+    },
+    {
+      "bbox": [
+        931,
+        869,
+        1105,
+        913
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Employer identification number"
+    },
+    {
+      "bbox": [
+        151,
+        1170,
+        710,
+        1200
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Signature of U.S. person"
+    },
+    {
+      "bbox": [
+        780,
+        1170,
+        1134,
+        1200
+      ],
+      "group": "",
+      "kind": "text",
+      "label": "Date"
+    }
+  ],
+  "_usage": {
+    "model": "muse-spark-1.3",
+    "calls": 1,
+    "prompt_tokens": 2729,
+    "completion_tokens": 5294,
+    "cost_usd": 0.02591
+  }
+}

@@ -1,0 +1,511 @@
+[
+  {
+    "bbox": [
+      148,
+      210,
+      1134,
+      262
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "1 Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner's name on line 1, and enter the business/disregarded entity's name on line 2.)",
+    "rect": [
+      74.0,
+      105.0,
+      567.0,
+      131.0
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      148,
+      268,
+      1134,
+      311
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "2 Business name/disregarded entity name, if different from above.",
+    "rect": [
+      74.0,
+      134.0,
+      567.0,
+      155.5
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      146,
+      360,
+      168,
+      382
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a Individual/sole proprietor",
+    "rect": [
+      73.0,
+      180.2,
+      81.0,
+      188.2
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      389,
+      360,
+      411,
+      382
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a C corporation",
+    "rect": [
+      180.0,
+      180.2,
+      188.0,
+      188.2
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      534,
+      360,
+      556,
+      382
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a S corporation",
+    "rect": [
+      252.0,
+      180.2,
+      260.0,
+      188.2
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      676,
+      360,
+      698,
+      382
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a Partnership",
+    "rect": [
+      324.0,
+      180.2,
+      332.0,
+      188.2
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      810,
+      360,
+      832,
+      382
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a Trust/estate",
+    "rect": [
+      388.8,
+      180.2,
+      396.8,
+      188.2
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      146,
+      390,
+      168,
+      412
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)",
+    "rect": [
+      73.0,
+      193.5,
+      81.0,
+      201.5
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      720,
+      390,
+      908,
+      412
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)",
+    "rect": [
+      360.0,
+      195.0,
+      454.0,
+      206.0
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      146,
+      463,
+      168,
+      485
+    ],
+    "group": "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.",
+    "kind": "checkbox",
+    "label": "3a Other (see instructions)",
+    "rect": [
+      73.0,
+      230.0,
+      81.0,
+      238.0
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      296,
+      463,
+      530,
+      485
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "3a Other (see instructions)",
+    "rect": [
+      148.0,
+      231.5,
+      265.0,
+      242.5
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      884,
+      521,
+      906,
+      543
+    ],
+    "group": "",
+    "kind": "checkbox",
+    "label": "3b If on line 3a you checked \"Partnership\" or \"Trust/estate,\" or checked \"LLC\" and entered \"P\" as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions",
+    "rect": [
+      440.6,
+      263.0,
+      448.6,
+      271.0
+    ],
+    "snapped": true,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      994,
+      392,
+      1134,
+      408
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "4 Exempt payee code (if any)",
+    "rect": [
+      497.0,
+      196.0,
+      567.0,
+      204.0
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      976,
+      472,
+      1134,
+      488
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "4 Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any)",
+    "rect": [
+      488.0,
+      236.0,
+      567.0,
+      244.0
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      148,
+      567,
+      772,
+      607
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "5 Address (number, street, and apt. or suite no.). See instructions.",
+    "rect": [
+      74.0,
+      283.5,
+      386.0,
+      303.5
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      795,
+      567,
+      1134,
+      651
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Requester's name and address (optional)",
+    "rect": [
+      397.5,
+      283.5,
+      567.0,
+      325.5
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      148,
+      615,
+      772,
+      655
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "6 City, state, and ZIP code",
+    "rect": [
+      74.0,
+      307.5,
+      386.0,
+      327.5
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      398,
+      673,
+      1134,
+      699
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "7 List account number(s) here (optional)",
+    "rect": [
+      199.0,
+      336.5,
+      567.0,
+      349.5
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      826,
+      780,
+      908,
+      824
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Social security number",
+    "rect": [
+      417.6,
+      372.0,
+      460.8,
+      396.0
+    ],
+    "snapped": true,
+    "cells": 3
+  },
+  {
+    "bbox": [
+      932,
+      780,
+      986,
+      824
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Social security number",
+    "rect": [
+      475.2,
+      372.0,
+      504.0,
+      396.0
+    ],
+    "snapped": true,
+    "cells": 2
+  },
+  {
+    "bbox": [
+      1010,
+      780,
+      1134,
+      824
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Social security number",
+    "rect": [
+      518.4,
+      372.0,
+      576.0,
+      396.0
+    ],
+    "snapped": true,
+    "cells": 4
+  },
+  {
+    "bbox": [
+      826,
+      869,
+      880,
+      913
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Employer identification number",
+    "rect": [
+      417.6,
+      420.0,
+      446.4,
+      444.0
+    ],
+    "snapped": true,
+    "cells": 2
+  },
+  {
+    "bbox": [
+      931,
+      869,
+      1105,
+      913
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Employer identification number",
+    "rect": [
+      460.8,
+      420.0,
+      561.6,
+      444.0
+    ],
+    "snapped": true,
+    "cells": 7
+  },
+  {
+    "bbox": [
+      151,
+      1170,
+      710,
+      1200
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Signature of U.S. person",
+    "rect": [
+      75.5,
+      585.0,
+      355.0,
+      600.0
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "bbox": [
+      780,
+      1170,
+      1134,
+      1200
+    ],
+    "group": "",
+    "kind": "text",
+    "label": "Date",
+    "rect": [
+      390.0,
+      585.0,
+      567.0,
+      600.0
+    ],
+    "snapped": false,
+    "cells": 0
+  },
+  {
+    "label": "Cross out: 2. I am not subject to backup withholding because (a) I am exempt from backup withholding, or (b) I ",
+    "kind": "strike",
+    "page": 0,
+    "group": "",
+    "rect": [
+      36.0,
+      480.9,
+      574.6,
+      509.4
+    ],
+    "cells": 0,
+    "widget": 0,
+    "lines": [
+      [
+        36.0,
+        480.9,
+        562.8,
+        490.2
+      ],
+      [
+        45.0,
+        490.5,
+        574.6,
+        499.8
+      ],
+      [
+        45.0,
+        500.1,
+        206.5,
+        509.4
+      ]
+    ]
+  }
+]

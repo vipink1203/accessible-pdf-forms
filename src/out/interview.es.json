@@ -1,0 +1,698 @@
+{
+  "intro": "Este es el Form W-9 (formulario de impuestos W-9). Sirve para dar su número correcto de contribuyente a quien se lo pide. Vamos a contestar unas 18 preguntas, una por una. Le acompaño con calma.",
+  "skipped": [
+    {
+      "field": 15,
+      "reason": "Filled by the requester, not by you."
+    }
+  ],
+  "steps": [
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        0
+      ],
+      "help": "Escriba el nombre que aparece en su declaración. Si trabaja por cuenta propia o tiene una entidad no considerada separada, escriba el nombre del dueño.",
+      "id": "name1",
+      "question": "¿Cuál es su nombre tal como aparece en su declaración de impuestos?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "An entry is required.",
+      "help_verbatim": false,
+      "question_en": "What is your name as shown on your tax return?",
+      "help_en": "Enter the name shown on your tax return. For sole proprietor or disregarded entity, enter the owner's name."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        1
+      ],
+      "help": "Escriba el nombre de su negocio, comercio o DBA (nombre comercial), o de su entidad no separada, solo si es diferente.",
+      "id": "name2",
+      "question": "¿Cuál es el nombre de su negocio, si es diferente del anterior?",
+      "required": false,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "Business name/disregarded entity name, if different from above.",
+      "help_verbatim": false,
+      "question_en": "What is your business name, if different from above?",
+      "help_en": "Enter business, trade, DBA, or disregarded entity name only if different."
+    },
+    {
+      "answer": "choice",
+      "choices": [
+        {
+          "field": 2,
+          "label": "Persona física o trabajador por cuenta propia",
+          "value": "individual",
+          "label_en": "Individual/sole proprietor"
+        },
+        {
+          "field": 3,
+          "label": "Corporación tipo C",
+          "value": "c",
+          "label_en": "C corporation"
+        },
+        {
+          "field": 4,
+          "label": "Corporación tipo S",
+          "value": "s",
+          "label_en": "S corporation"
+        },
+        {
+          "field": 5,
+          "label": "Sociedad colectiva",
+          "value": "partnership",
+          "label_en": "Partnership"
+        },
+        {
+          "field": 6,
+          "label": "Fideicomiso o sucesión",
+          "value": "trust",
+          "label_en": "Trust/estate"
+        },
+        {
+          "field": 7,
+          "label": "LLC (compañía de responsabilidad limitada)",
+          "value": "llc",
+          "label_en": "LLC"
+        },
+        {
+          "field": 9,
+          "label": "Otro (vea las instrucciones)",
+          "value": "other",
+          "label_en": "Other (see instructions)"
+        }
+      ],
+      "fields": [],
+      "help": "Marque solo una casilla. Si su entidad no es considerada separada, marque la clasificación del dueño.",
+      "id": "taxclass",
+      "question": "¿Cuál es su clasificación fiscal federal?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "only one of the following seven boxes.",
+      "help_verbatim": false,
+      "question_en": "What is your federal tax classification?",
+      "help_en": "Check only one box. A disregarded entity checks the owner classification."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        8
+      ],
+      "help": "Escriba C, S o P. Si su entidad no es considerada separada, no use la casilla de LLC.",
+      "id": "llc_detail",
+      "question": "¿Qué clasificación fiscal de LLC le corresponde?",
+      "required": true,
+      "show_if": {
+        "step": "taxclass",
+        "values": [
+          "llc"
+        ]
+      },
+      "source": "LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)",
+      "help_verbatim": false,
+      "question_en": "Which LLC tax classification applies to you?",
+      "help_en": "Enter C, S, or P. A disregarded entity does not use the LLC box."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        10
+      ],
+      "help": "",
+      "id": "other_detail",
+      "question": "¿Qué otra clasificación lo describe a usted?",
+      "required": true,
+      "show_if": {
+        "step": "taxclass",
+        "values": [
+          "other"
+        ]
+      },
+      "source": "Other (see instructions)",
+      "help_verbatim": false,
+      "question_en": "What other classification describes you?",
+      "help_en": ""
+    },
+    {
+      "answer": "choice",
+      "choices": [
+        {
+          "field": 11,
+          "label": "Sí, tengo socios extranjeros para declarar",
+          "value": "yes",
+          "label_en": "Yes, I have foreign partners to report"
+        },
+        {
+          "field": -1,
+          "label": "No",
+          "value": "no",
+          "label_en": "No"
+        }
+      ],
+      "fields": [],
+      "help": "Marque solo si entrega este formulario a una sociedad, fideicomiso o sucesión de su propiedad. Indique si tiene socios, dueños o beneficiarios extranjeros.",
+      "id": "foreign_flag",
+      "question": "¿Tiene socios, dueños o beneficiarios extranjeros para declarar?",
+      "required": false,
+      "show_if": {
+        "step": "taxclass",
+        "values": [
+          "partnership",
+          "trust",
+          "llc"
+        ]
+      },
+      "source": "this box if you have any foreign partners, owners, or beneficiaries.",
+      "help_verbatim": false,
+      "question_en": "Do you have foreign partners, owners, or beneficiaries to report?",
+      "help_en": "Check only if you give this form to a partnership, trust, or estate you own. Check if you have any foreign partners, owners, or beneficiaries."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        12
+      ],
+      "help": "Los códigos aplican solo a ciertas entidades, no a personas físicas. Escriba un código si le corresponde.",
+      "id": "exempt_payee",
+      "question": "¿Cuál es su código de beneficiario exento, si tiene uno?",
+      "required": false,
+      "show_if": {
+        "step": "taxclass",
+        "values": [
+          "c",
+          "s",
+          "partnership",
+          "trust",
+          "llc",
+          "other"
+        ]
+      },
+      "source": "Exempt payee code (if any)",
+      "help_verbatim": false,
+      "question_en": "What is your exempt payee code, if any?",
+      "help_en": "Codes apply only to certain entities, not individuals. Enter a code if any applies to you."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        13
+      ],
+      "help": "Puede dejarlo en blanco si su cuenta está en los Estados Unidos. Escriba un código si le corresponde.",
+      "id": "fatca_code",
+      "question": "¿Cuál es su código de exención de FATCA (ley sobre cuentas extranjeras), si tiene uno?",
+      "required": false,
+      "show_if": {
+        "step": "taxclass",
+        "values": [
+          "c",
+          "s",
+          "partnership",
+          "trust",
+          "llc",
+          "other"
+        ]
+      },
+      "source": "(Applies to accounts maintained",
+      "help_verbatim": false,
+      "question_en": "What is your FATCA reporting exemption code, if any?",
+      "help_en": "You may leave this blank for an account in the United States. Enter a code if it applies."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        14
+      ],
+      "help": "Escriba número, calle, apartamento u oficina. Ahí le enviarán sus documentos.",
+      "id": "address",
+      "question": "¿Cuál es su dirección?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "Address (number, street, and apt. or suite no.). See instructions.",
+      "help_verbatim": false,
+      "question_en": "What is your street address?",
+      "help_en": "Enter number, street, apartment or suite number. This is where the requester will mail your returns."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        16
+      ],
+      "help": "",
+      "id": "city_state_zip",
+      "question": "¿Cuál es su ciudad, estado y código postal?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "City, state, and ZIP code",
+      "help_verbatim": false,
+      "question_en": "What is your city, state, and ZIP code?",
+      "help_en": ""
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        17
+      ],
+      "help": "Puede anotar números de cuenta. Esto es opcional.",
+      "id": "account_numbers",
+      "question": "¿Qué números de cuenta desea anotar?",
+      "required": false,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "List account number(s) here (optional)",
+      "help_verbatim": false,
+      "question_en": "What account numbers do you want to list?",
+      "help_en": "You may list account numbers. This is optional."
+    },
+    {
+      "answer": "choice",
+      "choices": [
+        {
+          "field": -1,
+          "label": "Número de Seguro Social",
+          "value": "ssn",
+          "label_en": "Social Security Number"
+        },
+        {
+          "field": -1,
+          "label": "Número de Identificación del Empleador",
+          "value": "ein",
+          "label_en": "Employer Identification Number"
+        }
+      ],
+      "fields": [],
+      "help": "El número debe coincidir con el nombre de la línea 1. Escríbalo en la casilla correcta.",
+      "id": "tin_type",
+      "question": "¿Qué número de contribuyente va a dar?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "Enter your TIN in the appropriate box.",
+      "help_verbatim": false,
+      "question_en": "Which taxpayer number will you provide?",
+      "help_en": "The number must match the name on line 1. Enter it in the appropriate box."
+    },
+    {
+      "answer": "digits",
+      "choices": [],
+      "fields": [
+        18,
+        19,
+        20
+      ],
+      "help": "Para personas físicas, por lo general es su número de Seguro Social. Si usted es extranjero residente sin SSN (número de Seguro Social), escriba aquí su ITIN (número personal de impuestos).",
+      "id": "ssn_digits",
+      "question": "¿Cuál es su número de Seguro Social?",
+      "required": true,
+      "show_if": {
+        "step": "tin_type",
+        "values": [
+          "ssn"
+        ]
+      },
+      "source": "Social security number",
+      "help_verbatim": false,
+      "question_en": "What is your Social Security number?",
+      "help_en": "For individuals this is generally your social security number. A resident alien without SSN enters ITIN here."
+    },
+    {
+      "answer": "digits",
+      "choices": [],
+      "fields": [
+        21,
+        22
+      ],
+      "help": "Para otras entidades, este es su número de identificación del empleador. Si trabaja por cuenta propia y tiene EIN (número de identificación del empleador), puede escribir su SSN o su EIN.",
+      "id": "ein_digits",
+      "question": "¿Cuál es su número de Identificación del Empleador?",
+      "required": true,
+      "show_if": {
+        "step": "tin_type",
+        "values": [
+          "ein"
+        ]
+      },
+      "source": "Employer identification number",
+      "help_verbatim": false,
+      "question_en": "What is your Employer Identification Number?",
+      "help_en": "For other entities this is your employer identification number. A sole proprietor with EIN may enter SSN or EIN."
+    },
+    {
+      "answer": "choice",
+      "choices": [
+        {
+          "field": 25,
+          "label": "Sí, me avisaron",
+          "value": "yes",
+          "label_en": "Yes, I was notified"
+        },
+        {
+          "field": -1,
+          "label": "No, no me avisaron",
+          "value": "no",
+          "label_en": "No, I was not notified"
+        }
+      ],
+      "fields": [],
+      "help": "Si le avisaron que está sujeto a la retención adicional, tache el punto 2. Para transacciones de bienes raíces, el punto 2 no aplica.",
+      "id": "backup_crossout",
+      "question": "¿Le han avisado que está sujeto a retención adicional?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "You must cross out item 2 above if you have been notified by the IRS that you are currently subject to backup withholding",
+      "help_verbatim": false,
+      "question_en": "Have you been told you are subject to backup withholding?",
+      "help_en": "Cross out item 2 if you were notified you are subject to backup withholding. For real estate transactions item 2 does not apply."
+    },
+    {
+      "answer": "confirm",
+      "choices": [],
+      "fields": [],
+      "help": "Bajo pena de perjurio, certifico que: 1. El número que aparece en este formulario es mi número correcto de identificación del contribuyente (o estoy esperando que me asignen un número); y 2. No estoy sujeto a la retención adicional porque (a) estoy exento de la retención adicional, o (b) el Servicio de Impuestos Internos (IRS) no me ha notificado que estoy sujeto a la retención adicional por no haber declarado todos los intereses o dividendos, o (c) el IRS me ha notificado que ya no estoy sujeto a la retención adicional; y 3. Soy ciudadano estadounidense u otra persona estadounidense (según se define abajo); y 4. El código o los códigos de FATCA indicados en este formulario (si los hay) que señalan que estoy exento de la declaración bajo FATCA son correctos.",
+      "id": "certify",
+      "question": "¿Confirma que su certificación es verdadera?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "Under penalties of perjury, I certify that:",
+      "help_verbatim": true,
+      "question_en": "Do you confirm your certification is true?",
+      "help_en": "Under penalties of perjury, I certify that: 1. The number shown on this form is my correct taxpayer identification number (or I am waiting for a number to be issued to me); and 2. I am not subject to backup withholding because (a) I am exempt from backup withholding, or (b) I have not been notified by the Internal Revenue Service (IRS) that I am subject to backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am no longer subject to backup withholding; and 3. I am a U.S. citizen or other U.S. person (defined below); and 4. The FATCA code(s) entered on this form (if any) indicating that I am exempt from FATCA reporting is correct."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        23
+      ],
+      "help": "La persona de la línea 1 debe firmar por una entidad no considerada separada. Para una cuenta conjunta, solo firma la persona del TIN (número de contribuyente) cuando se requiera.",
+      "id": "signature",
+      "question": "¿Cuál es su nombre completo como firma?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "Signature of",
+      "help_verbatim": false,
+      "question_en": "What is your full name as your signature?",
+      "help_en": "The line 1 person must sign for a disregarded entity. For a joint account only the TIN person signs when required."
+    },
+    {
+      "answer": "text",
+      "choices": [],
+      "fields": [
+        24
+      ],
+      "help": "",
+      "id": "sign_date",
+      "question": "¿Con qué fecha firma hoy?",
+      "required": true,
+      "show_if": {
+        "step": "",
+        "values": []
+      },
+      "source": "Date",
+      "help_verbatim": false,
+      "question_en": "What date do you sign today?",
+      "help_en": ""
+    }
+  ],
+  "title": "Form W-9 (formulario de impuestos)",
+  "fields": [
+    {
+      "label": "1 Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner's name on line 1, and enter the business/disregarded entity's name on line 2.)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "2 Business name/disregarded entity name, if different from above.",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "3a Individual/sole proprietor",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a C corporation",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a S corporation",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a Partnership",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a Trust/estate",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "3a Other (see instructions)",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "3a Other (see instructions)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "3b If on line 3a you checked \"Partnership\" or \"Trust/estate,\" or checked \"LLC\" and entered \"P\" as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions",
+      "kind": "checkbox",
+      "cells": 0
+    },
+    {
+      "label": "4 Exempt payee code (if any)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "4 Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "5 Address (number, street, and apt. or suite no.). See instructions.",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "Requester's name and address (optional)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "6 City, state, and ZIP code",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "7 List account number(s) here (optional)",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "Social security number",
+      "kind": "text",
+      "cells": 3
+    },
+    {
+      "label": "Social security number",
+      "kind": "text",
+      "cells": 2
+    },
+    {
+      "label": "Social security number",
+      "kind": "text",
+      "cells": 4
+    },
+    {
+      "label": "Employer identification number",
+      "kind": "text",
+      "cells": 2
+    },
+    {
+      "label": "Employer identification number",
+      "kind": "text",
+      "cells": 7
+    },
+    {
+      "label": "Signature of U.S. person",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "Date",
+      "kind": "text",
+      "cells": 0
+    },
+    {
+      "label": "Cross out: 2. I am not subject to backup withholding because (a) I am exempt from backup withholding, or (b) I ",
+      "kind": "strike",
+      "cells": 0
+    }
+  ],
+  "problems": [],
+  "lang": {
+    "code": "es",
+    "name": "Spanish",
+    "tag": "es-US"
+  },
+  "english": false,
+  "phrases": {
+    "about": "Sobre este formulario",
+    "again": "Por favor, dígalo de nuevo.",
+    "back": "Atrás",
+    "blank": "En blanco",
+    "certify_ask": "¿Certifica que esto es verdad? Diga sí o no.",
+    "certify_box": "Lo he leído y certifico que es verdad",
+    "certify_intro": "Esto es lo que certifica.",
+    "certify_needed": "Necesita certificar esto para firmar el formulario.",
+    "certify_note": "Esto es una traducción. Lo que certifica es el texto en inglés del formulario.",
+    "certify_tick": "Marque la casilla para certificar, o vuelva atrás.",
+    "change": "Cambiar",
+    "change_answers": "Cambiar respuestas",
+    "check_title": "Revise sus respuestas",
+    "choose_one": "Elija una opción.",
+    "confirmed": "Confirmado",
+    "digits_count": "Necesito {need} dígitos y escuché {got}.",
+    "digits_only": "Use solo dígitos.",
+    "digits_typed": "Escriba {need} dígitos. Escribió {got}.",
+    "done": "Su formulario está listo.",
+    "done_focus": "Su formulario está listo. El enlace de descarga está seleccionado.",
+    "download": "Descargar el formulario lleno (PDF)",
+    "fill_button": "Llenar el formulario",
+    "fill_failed": "No se pudo llenar el formulario:",
+    "filled_body": "Las respuestas están escritas en el formulario original, listo para enviar a quien se lo pidió.",
+    "filled_title": "Su {title} está listo",
+    "filling": "Llenando el formulario.",
+    "form_words": "Las palabras exactas del formulario, en inglés:",
+    "guided": "guiado",
+    "heard": "Escuché: {answer}. ¿Es correcto?",
+    "how_to": "Después del pitido, responda. También puede decir: repetir, volver, omitir, explicar o pausar. Pulse Escape para pausar en cualquier momento, y Espacio para avanzar.",
+    "listening": "Escuchando",
+    "mic_denied": "No puedo usar el micrófono. Permítalo para esta página, o use su lector de pantalla.",
+    "next": "Siguiente",
+    "no_speech": "No escuché nada.",
+    "no_voice": "No hay voz instalada en esta computadora para este idioma, así que no puedo hablar. Agréguela en Ajustes del sistema, o use su lector de pantalla.",
+    "not_confirmed": "No confirmado",
+    "optional": "Esta es opcional. Diga omitir para dejarla en blanco.",
+    "optional_typed": "Opcional: déjelo en blanco y elija Siguiente para omitir.",
+    "options": "Sus opciones son: {options}.",
+    "paused": "En pausa. Pulse Espacio para seguir.",
+    "preview_alt": "Imagen del formulario ya llenado, para que un ayudante que ve lo revise.",
+    "privacy": "Sus respuestas habladas se envían a los modelos Muse de Meta para entenderlas. Meta no las usa para entrenar sus modelos, pero puede guardarlas según sus condiciones. Nada se guarda en esta computadora.",
+    "question_n": "Pregunta {n} de {total}",
+    "repeat": "Repetir",
+    "required": "Esta respuesta es obligatoria.",
+    "review_ask": "¿Lleno el formulario ahora? Diga sí, o diga qué respuesta quiere cambiar.",
+    "review_count": "{n} preguntas. Cambie cualquier respuesta antes de llenar el formulario.",
+    "review_intro": "Estas son sus respuestas.",
+    "save_return": "Guardar y volver",
+    "saved": "Lo guardé en su carpeta de Descargas como {file}.",
+    "skipped": "Omitida.",
+    "start": "Empezar",
+    "start_body": "Le leeré cada pregunta en voz alta y escucharé su respuesta. Use audífonos para que no haya eco.",
+    "start_reader": "Usar mi lector de pantalla",
+    "start_title": "Llénelo hablando",
+    "start_voice": "Empezar a hablar",
+    "still_needed": "«{question}» todavía necesita respuesta.",
+    "thinking": "Entendiendo",
+    "type_digits": "Escriba los {need} dígitos; guiones y espacios valen.",
+    "type_instead": "Escribir",
+    "typed_privacy": "Sus respuestas se quedan en esta computadora. Al final puede revisar todo antes de llenar el formulario.",
+    "unclear": "Perdón, no le entendí.",
+    "voice_error": "No pude conectar con el servicio de voz. Pulse Espacio para intentarlo de nuevo.",
+    "you_said": "Usted dijo:",
+    "mic_silent": "Su micrófono no está enviando sonido. Revise que no esté silenciado y que este navegador tenga permiso para usarlo en Ajustes del Sistema, Privacidad y seguridad, Micrófono. Luego pulse la barra espaciadora.",
+    "speaking": "Hablando",
+    "paused_user": "En pausa. Sus respuestas están guardadas. Pulse Continuar o Espacio cuando quiera seguir.",
+    "stuck": "Tomemos un pequeño descanso. Pulse Continuar para intentar otra vez esta pregunta, o Escribir para escribir la respuesta.",
+    "spell_hint": "Si es un nombre, puede deletrearlo letra por letra.",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "pick_title": "Llenar un formulario PDF",
+    "pick_body": "Elija un formulario PDF en blanco en esta computadora. Lo voy a convertir en preguntas, una por una, y voy a escribir sus respuestas en el formulario.",
+    "pick_privacy": "Para encontrar los espacios para llenar y escribir las preguntas, el formulario en blanco se envía a los modelos Muse de Meta. Elija un formulario que todavía no esté llenado.",
+    "pick_file": "Elija un formulario PDF",
+    "pick_sample": "Pruebe con el formulario W-9 del IRS",
+    "other_form": "Elija otro formulario",
+    "prep_title": "Preparando su formulario",
+    "prep_reading": "Leyendo el formulario.",
+    "prep_finding": "Buscando los espacios para llenar: {n} de {total} páginas listas.",
+    "prep_writing": "Escribiendo las preguntas. Tarda alrededor de un minuto.",
+    "prep_language": "Escribiendo las preguntas en su idioma. Tarda alrededor de medio minuto.",
+    "prep_failed_not_pdf": "Este archivo no es un formulario PDF.",
+    "prep_failed_locked": "Este PDF está protegido con contraseña. Guarde una copia sin protección y elija esa copia.",
+    "prep_failed_none": "No encontré ningún espacio para llenar en este formulario.",
+    "prep_failed_long": "Este formulario tiene más de {limit} páginas para llenar, y eso es demasiado largo por ahora.",
+    "prep_failed_many": "Este formulario tiene más de {limit} espacios para llenar, y eso es demasiado por ahora.",
+    "prep_failed_big": "Este archivo pesa más de 20 MB, y eso es demasiado grande por ahora.",
+    "prep_failed_service": "No pude comunicarme con los modelos Muse de Meta. Inténtelo de nuevo en un minuto.",
+    "prep_failed_broken": "Algo salió mal al leer este formulario."
+  },
+  "yes_words": [
+    "sí",
+    "claro",
+    "correcto",
+    "exacto",
+    "así es",
+    "está bien",
+    "de acuerdo",
+    "vale",
+    "seguro",
+    "ajá"
+  ]
+}

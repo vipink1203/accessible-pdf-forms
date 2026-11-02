@@ -1,0 +1,19 @@
+# Keys never live here: the app reads ~/meta.key or MODEL_API_KEY.
+*.key
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+.ruff_cache/
+
+# Made on your computer when you run the app or the tests.
+src/out/e2e/
+src/out/forms/
+src/out/debug/
+src/out/accents/
+src/voice-samples/
+
+# Archify check receipts: they record local file paths.
+architecture/architecture.*.json

@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Accessible PDF forms: any PDF form becomes a guided interview",
+    "output": "projects/accessible-pdf-forms/architecture/architecture.html",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "external": {
+          "label": "Person and form"
+        },
+        "cloud": {
+          "label": "Meta's Muse model"
+        },
+        "backend": {
+          "label": "Our code, no AI"
+        },
+        "security": {
+          "label": "Safety check"
+        },
+        "database": {
+          "label": "Saved for this form"
+        },
+        "frontend": {
+          "label": "What they use"
+        }
+      }
+    },
+    "views": [
+      {
+        "id": "find",
+        "label": "1. Find where answers go",
+        "focus": [
+          "form",
+          "reader",
+          "finder",
+          "snap",
+          "positions"
+        ],
+        "note": "A fillable form's own fields are read by our code. On a flat form, Muse finds each blank and our code lines it up."
+      },
+      {
+        "id": "write",
+        "label": "2. Muse writes the questions",
+        "focus": [
+          "form",
+          "reader",
+          "finder",
+          "writer",
+          "checker",
+          "script"
+        ],
+        "note": "Muse writes plain questions from the form, seeing each field marked. Every quote must match the form word for word."
+      },
+      {
+        "id": "answer",
+        "label": "3. The person answers",
+        "focus": [
+          "person",
+          "page",
+          "script"
+        ],
+        "note": "One question at a time, by voice or by screen reader. Questions that don't apply are skipped; every answer is checked at the end."
+      },
+      {
+        "id": "fill",
+        "label": "4. Answers go onto the form",
+        "focus": [
+          "page",
+          "filler",
+          "positions",
+          "filled"
+        ],
+        "note": "The answers are written onto the original page at the exact spots, one digit per box, on the person's own computer."
+      },
+      {
+        "id": "talk",
+        "label": "5. Or they just talk",
+        "focus": [
+          "person",
+          "page",
+          "hearer"
+        ],
+        "note": "The page reads each question aloud. Muse hears the reply; the page reads it back and moves on after a yes."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "form",
+      "type": "external",
+      "label": "PDF form they upload",
+      "sublabel": "fillable or flat, any form",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "reader",
+      "type": "backend",
+      "label": "Reads its own fields",
+      "sublabel": "fillable forms: no AI needed",
+      "pos": [
+        600,
+        40
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "finder",
+      "type": "cloud",
+      "label": "Finds every blank",
+      "sublabel": "flat forms: Muse Spark looks",
+      "pos": [
+        320,
+        200
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "snap",
+      "type": "backend",
+      "label": "Lines up with boxes",
+      "sublabel": "uses the page's printed lines",
+      "pos": [
+        600,
+        200
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "positions",
+      "type": "database",
+      "label": "Where each answer goes",
+      "sublabel": "fields.json",
+      "pos": [
+        1160,
+        200
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "writer",
+      "type": "cloud",
+      "label": "Writes plain questions",
+      "sublabel": "Muse Spark, then into Spanish",
+      "pos": [
+        320,
+        380
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "checker",
+      "type": "security",
+      "label": "Checks every quote",
+      "sublabel": "word for word; repairs what fails",
+      "pos": [
+        600,
+        380
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "script",
+      "type": "database",
+      "label": "Question script",
+      "sublabel": "interview.json, kept for this form",
+      "pos": [
+        880,
+        380
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "person",
+      "type": "external",
+      "label": "Blind person",
+      "sublabel": "talks, or types with a screen reader",
+      "icon": "person",
+      "pos": [
+        40,
+        560
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "page",
+      "type": "frontend",
+      "label": "Asks one at a time",
+      "sublabel": "reads aloud, listens, pauses when asked",
+      "pos": [
+        880,
+        560
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "hearer",
+      "type": "cloud",
+      "label": "Understands each reply",
+      "sublabel": "Muse Voice Transcribe x2, then Muse Spark",
+      "pos": [
+        600,
+        740
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "filler",
+      "type": "backend",
+      "label": "Writes answers on form",
+      "sublabel": "PyMuPDF, on this computer",
+      "pos": [
+        1160,
+        560
+      ],
+      "size": [
+        180,
+        64
+      ]
+    },
+    {
+      "id": "filled",
+      "type": "external",
+      "label": "Filled original form",
+      "sublabel": "the official PDF, ready to send",
+      "pos": [
+        1160,
+        740
+      ],
+      "size": [
+        180,
+        64
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Set up once per form",
+      "wraps": [
+        "reader",
+        "finder",
+        "snap",
+        "positions",
+        "writer",
+        "checker",
+        "script"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "On the person's computer: typed answers stay here",
+      "wraps": [
+        "page",
+        "filler",
+        "filled"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "own-fields",
+      "from": "form",
+      "to": "reader",
+      "label": "fillable",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "known",
+      "from": "reader",
+      "to": "positions",
+      "label": "its fields"
+    },
+    {
+      "id": "picture",
+      "from": "form",
+      "to": "finder",
+      "label": "flat: page pictures",
+      "variant": "emphasis"
+    },
+    {
+      "id": "rough",
+      "from": "finder",
+      "to": "snap",
+      "label": "rough spots"
+    },
+    {
+      "id": "exact",
+      "from": "snap",
+      "to": "positions",
+      "label": "exact spots"
+    },
+    {
+      "id": "field-list",
+      "from": "finder",
+      "to": "writer",
+      "label": "blanks found"
+    },
+    {
+      "id": "words",
+      "from": "form",
+      "to": "writer",
+      "label": "form's own words",
+      "fromSide": "bottom",
+      "toSide": "left"
+    },
+    {
+      "id": "draft",
+      "from": "writer",
+      "to": "checker",
+      "label": "draft"
+    },
+    {
+      "id": "passed",
+      "from": "checker",
+      "to": "script",
+      "label": "passed"
+    },
+    {
+      "id": "questions",
+      "from": "script",
+      "to": "page",
+      "label": "questions"
+    },
+    {
+      "id": "answers",
+      "from": "person",
+      "to": "page",
+      "label": "talks or types",
+      "variant": "emphasis"
+    },
+    {
+      "id": "reply",
+      "from": "page",
+      "to": "hearer",
+      "label": "spoken reply"
+    },
+    {
+      "id": "meaning",
+      "from": "hearer",
+      "to": "page",
+      "label": "what they meant"
+    },
+    {
+      "id": "checked",
+      "from": "page",
+      "to": "filler",
+      "label": "checked answers",
+      "variant": "security"
+    },
+    {
+      "id": "spots",
+      "from": "positions",
+      "to": "filler",
+      "label": "exact spots"
+    },
+    {
+      "id": "out",
+      "from": "filler",
+      "to": "filled",
+      "label": "download"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "What leaves the computer",
+      "items": [
+        "The blank public form, to Muse once per form and language",
+        "Spoken replies, to Meta to be understood; not used for training",
+        "Typed answers never leave"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Proven so far",
+      "items": [
+        "IRS W-9: 23 of 23 blanks found and placed, every quote word for word",
+        "Voice runs pass in English and Spanish, with pause and resume",
+        "Upload: W-9 and W-4 (fillable), and the W-4 made flat, filled correctly",
+        "12 real accents heard with about 4% word errors"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Not yet proven",
+      "items": [
+        "Scanned forms, and real flat forms beyond the W-4",
+        "A real microphone in a noisy room",
+        "Testing with blind users"
+      ]
+    }
+  ]
+}

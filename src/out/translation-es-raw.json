@@ -1,0 +1,541 @@
+{
+  "intro": "Este es el Form W-9 (formulario de impuestos W-9). Sirve para dar su número correcto de contribuyente a quien se lo pide. Vamos a contestar unas 18 preguntas, una por una. Le acompaño con calma.",
+  "phrases": {
+    "about": "Sobre este formulario",
+    "again": "Por favor, dígalo de nuevo.",
+    "back": "Atrás",
+    "blank": "En blanco",
+    "certify_ask": "¿Certifica que esto es verdad? Diga sí o no.",
+    "certify_box": "Lo he leído y certifico que es verdad",
+    "certify_intro": "Esto es lo que certifica.",
+    "certify_needed": "Necesita certificar esto para firmar el formulario.",
+    "certify_note": "Esto es una traducción. Lo que certifica es el texto en inglés del formulario.",
+    "certify_tick": "Marque la casilla para certificar, o vuelva atrás.",
+    "change": "Cambiar",
+    "change_answers": "Cambiar respuestas",
+    "check_title": "Revise sus respuestas",
+    "choose_one": "Elija una opción.",
+    "confirmed": "Confirmado",
+    "digits_count": "Necesito {need} dígitos y escuché {got}.",
+    "digits_only": "Use solo dígitos.",
+    "digits_typed": "Escriba {need} dígitos. Escribió {got}.",
+    "done": "Su formulario está listo.",
+    "done_focus": "Su formulario está listo. El enlace de descarga está seleccionado.",
+    "download": "Descargar el formulario lleno (PDF)",
+    "fill_button": "Llenar el formulario",
+    "fill_failed": "No se pudo llenar el formulario:",
+    "filled_body": "Las respuestas están escritas en el formulario original, listo para enviar a quien se lo pidió.",
+    "filled_title": "Su {title} está listo",
+    "filling": "Llenando el formulario.",
+    "form_words": "Las palabras exactas del formulario, en inglés:",
+    "guided": "guiado",
+    "heard": "Escuché: {answer}. ¿Es correcto?",
+    "how_to": "Después del pitido, responda. También puede decir: repetir, volver, omitir, explicar o pausar. Pulse Escape para pausar en cualquier momento, y Espacio para avanzar.",
+    "listening": "Escuchando",
+    "mic_denied": "No puedo usar el micrófono. Permítalo para esta página, o use su lector de pantalla.",
+    "next": "Siguiente",
+    "no_speech": "No escuché nada.",
+    "no_voice": "No hay voz instalada en esta computadora para este idioma, así que no puedo hablar. Agréguela en Ajustes del sistema, o use su lector de pantalla.",
+    "not_confirmed": "No confirmado",
+    "optional": "Esta es opcional. Diga omitir para dejarla en blanco.",
+    "optional_typed": "Opcional: déjelo en blanco y elija Siguiente para omitir.",
+    "options": "Sus opciones son: {options}.",
+    "paused": "En pausa. Pulse Espacio para seguir.",
+    "preview_alt": "Imagen del formulario ya llenado, para que un ayudante que ve lo revise.",
+    "privacy": "Sus respuestas habladas se envían a los modelos Muse de Meta para entenderlas. Meta no las usa para entrenar sus modelos, pero puede guardarlas según sus condiciones. Nada se guarda en esta computadora.",
+    "question_n": "Pregunta {n} de {total}",
+    "repeat": "Repetir",
+    "required": "Esta respuesta es obligatoria.",
+    "review_ask": "¿Lleno el formulario ahora? Diga sí, o diga qué respuesta quiere cambiar.",
+    "review_count": "{n} preguntas. Cambie cualquier respuesta antes de llenar el formulario.",
+    "review_intro": "Estas son sus respuestas.",
+    "save_return": "Guardar y volver",
+    "saved": "Lo guardé en su carpeta de Descargas como {file}.",
+    "skipped": "Omitida.",
+    "start": "Empezar",
+    "start_body": "Le leeré cada pregunta en voz alta y escucharé su respuesta. Use audífonos para que no haya eco.",
+    "start_reader": "Usar mi lector de pantalla",
+    "start_title": "Llénelo hablando",
+    "start_voice": "Empezar a hablar",
+    "still_needed": "«{question}» todavía necesita respuesta.",
+    "thinking": "Entendiendo",
+    "type_digits": "Escriba los {need} dígitos; guiones y espacios valen.",
+    "type_instead": "Escribir",
+    "typed_privacy": "Sus respuestas se quedan en esta computadora. Al final puede revisar todo antes de llenar el formulario.",
+    "unclear": "Perdón, no le entendí.",
+    "voice_error": "No pude conectar con el servicio de voz. Pulse Espacio para intentarlo de nuevo.",
+    "you_said": "Usted dijo:",
+    "mic_silent": "Su micrófono no está enviando sonido. Revise que no esté silenciado y que este navegador tenga permiso para usarlo en Ajustes del Sistema, Privacidad y seguridad, Micrófono. Luego pulse la barra espaciadora.",
+    "speaking": "Hablando",
+    "paused_user": "En pausa. Sus respuestas están guardadas. Pulse Continuar o Espacio cuando quiera seguir.",
+    "stuck": "Tomemos un pequeño descanso. Pulse Continuar para intentar otra vez esta pregunta, o Escribir para escribir la respuesta.",
+    "spell_hint": "Si es un nombre, puede deletrearlo letra por letra.",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "pick_title": "Llenar un formulario PDF",
+    "pick_body": "Elija un formulario PDF en blanco en esta computadora. Lo voy a convertir en preguntas, una por una, y voy a escribir sus respuestas en el formulario.",
+    "pick_privacy": "Para encontrar los espacios para llenar y escribir las preguntas, el formulario en blanco se envía a los modelos Muse de Meta. Elija un formulario que todavía no esté llenado.",
+    "pick_file": "Elija un formulario PDF",
+    "pick_sample": "Pruebe con el formulario W-9 del IRS",
+    "other_form": "Elija otro formulario",
+    "prep_title": "Preparando su formulario",
+    "prep_reading": "Leyendo el formulario.",
+    "prep_finding": "Buscando los espacios para llenar: {n} de {total} páginas listas.",
+    "prep_writing": "Escribiendo las preguntas. Tarda alrededor de un minuto.",
+    "prep_language": "Escribiendo las preguntas en su idioma. Tarda alrededor de medio minuto.",
+    "prep_failed_not_pdf": "Este archivo no es un formulario PDF.",
+    "prep_failed_locked": "Este PDF está protegido con contraseña. Guarde una copia sin protección y elija esa copia.",
+    "prep_failed_none": "No encontré ningún espacio para llenar en este formulario.",
+    "prep_failed_long": "Este formulario tiene más de {limit} páginas para llenar, y eso es demasiado largo por ahora.",
+    "prep_failed_many": "Este formulario tiene más de {limit} espacios para llenar, y eso es demasiado por ahora.",
+    "prep_failed_big": "Este archivo pesa más de 20 MB, y eso es demasiado grande por ahora.",
+    "prep_failed_service": "No pude comunicarme con los modelos Muse de Meta. Inténtelo de nuevo en un minuto.",
+    "prep_failed_broken": "Algo salió mal al leer este formulario."
+  },
+  "steps": [
+    {
+      "choices": [],
+      "help": "Escriba el nombre que aparece en su declaración. Si trabaja por cuenta propia o tiene una entidad no considerada separada, escriba el nombre del dueño.",
+      "id": "name1",
+      "question": "¿Cuál es su nombre tal como aparece en su declaración de impuestos?"
+    },
+    {
+      "choices": [],
+      "help": "Escriba el nombre de su negocio, comercio o DBA (nombre comercial), o de su entidad no separada, solo si es diferente.",
+      "id": "name2",
+      "question": "¿Cuál es el nombre de su negocio, si es diferente del anterior?"
+    },
+    {
+      "choices": [
+        {
+          "label": "Persona física o trabajador por cuenta propia",
+          "value": "individual"
+        },
+        {
+          "label": "Corporación tipo C",
+          "value": "c"
+        },
+        {
+          "label": "Corporación tipo S",
+          "value": "s"
+        },
+        {
+          "label": "Sociedad colectiva",
+          "value": "partnership"
+        },
+        {
+          "label": "Fideicomiso o sucesión",
+          "value": "trust"
+        },
+        {
+          "label": "LLC (compañía de responsabilidad limitada)",
+          "value": "llc"
+        },
+        {
+          "label": "Otro (vea las instrucciones)",
+          "value": "other"
+        }
+      ],
+      "help": "Marque solo una casilla. Si su entidad no es considerada separada, marque la clasificación del dueño.",
+      "id": "taxclass",
+      "question": "¿Cuál es su clasificación fiscal federal?"
+    },
+    {
+      "choices": [],
+      "help": "Escriba C, S o P. Si su entidad no es considerada separada, no use la casilla de LLC.",
+      "id": "llc_detail",
+      "question": "¿Qué clasificación fiscal de LLC le corresponde?"
+    },
+    {
+      "choices": [],
+      "help": "",
+      "id": "other_detail",
+      "question": "¿Qué otra clasificación lo describe a usted?"
+    },
+    {
+      "choices": [
+        {
+          "label": "Sí, tengo socios extranjeros para declarar",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "help": "Marque solo si entrega este formulario a una sociedad, fideicomiso o sucesión de su propiedad. Indique si tiene socios, dueños o beneficiarios extranjeros.",
+      "id": "foreign_flag",
+      "question": "¿Tiene socios, dueños o beneficiarios extranjeros para declarar?"
+    },
+    {
+      "choices": [],
+      "help": "Los códigos aplican solo a ciertas entidades, no a personas físicas. Escriba un código si le corresponde.",
+      "id": "exempt_payee",
+      "question": "¿Cuál es su código de beneficiario exento, si tiene uno?"
+    },
+    {
+      "choices": [],
+      "help": "Puede dejarlo en blanco si su cuenta está en los Estados Unidos. Escriba un código si le corresponde.",
+      "id": "fatca_code",
+      "question": "¿Cuál es su código de exención de FATCA (ley sobre cuentas extranjeras), si tiene uno?"
+    },
+    {
+      "choices": [],
+      "help": "Escriba número, calle, apartamento u oficina. Ahí le enviarán sus documentos.",
+      "id": "address",
+      "question": "¿Cuál es su dirección?"
+    },
+    {
+      "choices": [],
+      "help": "",
+      "id": "city_state_zip",
+      "question": "¿Cuál es su ciudad, estado y código postal?"
+    },
+    {
+      "choices": [],
+      "help": "Puede anotar números de cuenta. Esto es opcional.",
+      "id": "account_numbers",
+      "question": "¿Qué números de cuenta desea anotar?"
+    },
+    {
+      "choices": [
+        {
+          "label": "Número de Seguro Social",
+          "value": "ssn"
+        },
+        {
+          "label": "Número de Identificación del Empleador",
+          "value": "ein"
+        }
+      ],
+      "help": "El número debe coincidir con el nombre de la línea 1. Escríbalo en la casilla correcta.",
+      "id": "tin_type",
+      "question": "¿Qué número de contribuyente va a dar?"
+    },
+    {
+      "choices": [],
+      "help": "Para personas físicas, por lo general es su número de Seguro Social. Si usted es extranjero residente sin SSN (número de Seguro Social), escriba aquí su ITIN (número personal de impuestos).",
+      "id": "ssn_digits",
+      "question": "¿Cuál es su número de Seguro Social?"
+    },
+    {
+      "choices": [],
+      "help": "Para otras entidades, este es su número de identificación del empleador. Si trabaja por cuenta propia y tiene EIN (número de identificación del empleador), puede escribir su SSN o su EIN.",
+      "id": "ein_digits",
+      "question": "¿Cuál es su número de Identificación del Empleador?"
+    },
+    {
+      "choices": [
+        {
+          "label": "Sí, me avisaron",
+          "value": "yes"
+        },
+        {
+          "label": "No, no me avisaron",
+          "value": "no"
+        }
+      ],
+      "help": "Si le avisaron que está sujeto a la retención adicional, tache el punto 2. Para transacciones de bienes raíces, el punto 2 no aplica.",
+      "id": "backup_crossout",
+      "question": "¿Le han avisado que está sujeto a retención adicional?"
+    },
+    {
+      "choices": [],
+      "help": "Bajo pena de perjurio, certifico que: 1. El número que aparece en este formulario es mi número correcto de identificación del contribuyente (o estoy esperando que me asignen un número); y 2. No estoy sujeto a la retención adicional porque (a) estoy exento de la retención adicional, o (b) el Servicio de Impuestos Internos (IRS) no me ha notificado que estoy sujeto a la retención adicional por no haber declarado todos los intereses o dividendos, o (c) el IRS me ha notificado que ya no estoy sujeto a la retención adicional; y 3. Soy ciudadano estadounidense u otra persona estadounidense (según se define abajo); y 4. El código o los códigos de FATCA indicados en este formulario (si los hay) que señalan que estoy exento de la declaración bajo FATCA son correctos.",
+      "id": "certify",
+      "question": "¿Confirma que su certificación es verdadera?"
+    },
+    {
+      "choices": [],
+      "help": "La persona de la línea 1 debe firmar por una entidad no considerada separada. Para una cuenta conjunta, solo firma la persona del TIN (número de contribuyente) cuando se requiera.",
+      "id": "signature",
+      "question": "¿Cuál es su nombre completo como firma?"
+    },
+    {
+      "choices": [],
+      "help": "",
+      "id": "sign_date",
+      "question": "¿Con qué fecha firma hoy?"
+    }
+  ],
+  "title": "Form W-9 (formulario de impuestos)",
+  "yes_words": [
+    "sí",
+    "claro",
+    "correcto",
+    "exacto",
+    "así es",
+    "está bien",
+    "de acuerdo",
+    "vale",
+    "seguro",
+    "ajá"
+  ],
+  "_usage": {
+    "model": "muse-spark-1.3",
+    "calls": 1,
+    "cost_usd": 0.02178
+  },
+  "phrases_en": {
+    "start_title": "Fill in this form by talking",
+    "start_body": "I will read each question aloud and listen to your answer. Use headphones so I don't hear myself.",
+    "start_voice": "Start talking",
+    "start_reader": "Use my screen reader instead",
+    "privacy": "Your spoken answers are sent to Meta's Muse models to be understood. Meta does not use them to train its models, but may keep them as its terms allow. Nothing is saved on this computer.",
+    "how_to": "After the beep, answer. You can also say: repeat, go back, skip, explain, or pause. Press Escape to pause at any time, and Space to skip ahead.",
+    "question_n": "Question {n} of {total}",
+    "options": "Your options are: {options}.",
+    "optional": "This one is optional. Say skip to leave it blank.",
+    "heard": "I heard: {answer}. Is that right?",
+    "unclear": "Sorry, I didn't understand that.",
+    "no_speech": "I didn't hear anything.",
+    "again": "Please say it again.",
+    "digits_count": "I need {need} digits, and I heard {got}.",
+    "required": "This answer is required.",
+    "skipped": "Skipped.",
+    "certify_intro": "Here is what you are certifying.",
+    "certify_note": "This is a translation. What you certify is the English text on the form.",
+    "certify_ask": "Do you certify that this is true? Say yes or no.",
+    "certify_needed": "You need to certify this to sign the form.",
+    "form_words": "The form's exact words, in English:",
+    "review_intro": "Here are your answers.",
+    "review_ask": "Should I fill in the form now? Say yes, or say which answer you want to change.",
+    "filling": "Filling in the form.",
+    "done": "Your form is filled.",
+    "saved": "I saved it in your Downloads folder as {file}.",
+    "voice_error": "I couldn't reach the speech service. Press Space to try again.",
+    "mic_denied": "I can't use the microphone. Allow it for this page, or use your screen reader instead.",
+    "no_voice": "No voice for this language is installed on this computer, so I can't talk in it. Add one in System Settings, or use your screen reader instead.",
+    "paused": "Paused. Press Space to continue.",
+    "paused_user": "Paused. Your answers so far are kept. Press Continue, or Space, when you are ready.",
+    "stuck": "Let's take a short break. Press Continue to try this question again, or Type instead to type the answer.",
+    "spell_hint": "If it is a name, you can spell it, letter by letter.",
+    "pause": "Pause",
+    "resume": "Continue",
+    "mic_silent": "Your microphone is sending no sound. Check that it is not muted, and that this browser may use it in System Settings, Privacy and Security, Microphone. Then press Space.",
+    "speaking": "Speaking",
+    "listening": "Listening",
+    "thinking": "Understanding",
+    "you_said": "You said:",
+    "blank": "Left blank",
+    "confirmed": "Confirmed",
+    "not_confirmed": "Not confirmed",
+    "guided": "guided",
+    "about": "About this form",
+    "typed_privacy": "Your answers stay on this computer. At the end you can check every answer before the form is filled.",
+    "start": "Start",
+    "back": "Back",
+    "next": "Next",
+    "repeat": "Repeat",
+    "type_instead": "Type instead",
+    "save_return": "Save and return",
+    "type_digits": "Type all {need} digits; dashes and spaces are fine.",
+    "optional_typed": "Optional: leave it blank and choose Next to skip.",
+    "certify_box": "I have read this and certify that it is true",
+    "certify_tick": "Tick the box to certify, or go back.",
+    "digits_only": "Use digits only.",
+    "digits_typed": "Enter {need} digits. You entered {got}.",
+    "choose_one": "Choose one option.",
+    "check_title": "Check your answers",
+    "review_count": "{n} questions. Change any answer before the form is filled.",
+    "change": "Change",
+    "still_needed": "\"{question}\" still needs an answer.",
+    "fill_button": "Fill the form",
+    "fill_failed": "The form could not be filled:",
+    "filled_title": "Your {title} is filled",
+    "filled_body": "The answers are written onto the original form, ready to send to whoever asked for it.",
+    "download": "Download the filled form (PDF)",
+    "change_answers": "Change answers",
+    "preview_alt": "Picture of the filled form, for a sighted helper to check.",
+    "done_focus": "Your form is filled. The download link has focus.",
+    "pick_title": "Fill in a PDF form",
+    "pick_body": "Choose a blank PDF form on this computer. I will turn it into questions, one at a time, and write your answers onto it.",
+    "pick_privacy": "To find the places to fill in and write the questions, the blank form is sent to Meta's Muse models. Choose a form that is not filled in yet.",
+    "pick_file": "Choose a PDF form",
+    "pick_sample": "Try it with IRS Form W-9",
+    "other_form": "Choose another form",
+    "prep_title": "Getting your form ready",
+    "prep_reading": "Reading the form.",
+    "prep_finding": "Finding the places to fill in: {n} of {total} pages done.",
+    "prep_writing": "Writing the questions. This takes about a minute.",
+    "prep_language": "Writing the questions in your language. This takes about half a minute.",
+    "prep_failed_not_pdf": "This file is not a PDF form.",
+    "prep_failed_locked": "This PDF is locked with a password. Save an unlocked copy, and choose that.",
+    "prep_failed_none": "I couldn't find any places to fill in on this form.",
+    "prep_failed_long": "This form has more than {limit} pages to fill in, which is too long for now.",
+    "prep_failed_many": "This form has more than {limit} places to fill in, which is too many for now.",
+    "prep_failed_big": "This file is larger than 20 MB, which is too large for now.",
+    "prep_failed_service": "I couldn't reach Meta's Muse models. Try again in a minute.",
+    "prep_failed_broken": "Something went wrong while reading this form."
+  },
+  "steps_en": {
+    "title": "Form W-9",
+    "intro": "This is Request for Taxpayer Identification Number and Certification to give your correct taxpayer number to the requester. You will answer about 18 questions one at a time.",
+    "steps": [
+      {
+        "id": "name1",
+        "question": "What is your name as shown on your tax return?",
+        "help": "Enter the name shown on your tax return. For sole proprietor or disregarded entity, enter the owner's name.",
+        "choices": []
+      },
+      {
+        "id": "name2",
+        "question": "What is your business name, if different from above?",
+        "help": "Enter business, trade, DBA, or disregarded entity name only if different.",
+        "choices": []
+      },
+      {
+        "id": "taxclass",
+        "question": "What is your federal tax classification?",
+        "help": "Check only one box. A disregarded entity checks the owner classification.",
+        "choices": [
+          {
+            "value": "individual",
+            "label": "Individual/sole proprietor"
+          },
+          {
+            "value": "c",
+            "label": "C corporation"
+          },
+          {
+            "value": "s",
+            "label": "S corporation"
+          },
+          {
+            "value": "partnership",
+            "label": "Partnership"
+          },
+          {
+            "value": "trust",
+            "label": "Trust/estate"
+          },
+          {
+            "value": "llc",
+            "label": "LLC"
+          },
+          {
+            "value": "other",
+            "label": "Other (see instructions)"
+          }
+        ]
+      },
+      {
+        "id": "llc_detail",
+        "question": "Which LLC tax classification applies to you?",
+        "help": "Enter C, S, or P. A disregarded entity does not use the LLC box.",
+        "choices": []
+      },
+      {
+        "id": "other_detail",
+        "question": "What other classification describes you?",
+        "help": "",
+        "choices": []
+      },
+      {
+        "id": "foreign_flag",
+        "question": "Do you have foreign partners, owners, or beneficiaries to report?",
+        "help": "Check only if you give this form to a partnership, trust, or estate you own. Check if you have any foreign partners, owners, or beneficiaries.",
+        "choices": [
+          {
+            "value": "yes",
+            "label": "Yes, I have foreign partners to report"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ]
+      },
+      {
+        "id": "exempt_payee",
+        "question": "What is your exempt payee code, if any?",
+        "help": "Codes apply only to certain entities, not individuals. Enter a code if any applies to you.",
+        "choices": []
+      },
+      {
+        "id": "fatca_code",
+        "question": "What is your FATCA reporting exemption code, if any?",
+        "help": "You may leave this blank for an account in the United States. Enter a code if it applies.",
+        "choices": []
+      },
+      {
+        "id": "address",
+        "question": "What is your street address?",
+        "help": "Enter number, street, apartment or suite number. This is where the requester will mail your returns.",
+        "choices": []
+      },
+      {
+        "id": "city_state_zip",
+        "question": "What is your city, state, and ZIP code?",
+        "help": "",
+        "choices": []
+      },
+      {
+        "id": "account_numbers",
+        "question": "What account numbers do you want to list?",
+        "help": "You may list account numbers. This is optional.",
+        "choices": []
+      },
+      {
+        "id": "tin_type",
+        "question": "Which taxpayer number will you provide?",
+        "help": "The number must match the name on line 1. Enter it in the appropriate box.",
+        "choices": [
+          {
+            "value": "ssn",
+            "label": "Social Security Number"
+          },
+          {
+            "value": "ein",
+            "label": "Employer Identification Number"
+          }
+        ]
+      },
+      {
+        "id": "ssn_digits",
+        "question": "What is your Social Security number?",
+        "help": "For individuals this is generally your social security number. A resident alien without SSN enters ITIN here.",
+        "choices": []
+      },
+      {
+        "id": "ein_digits",
+        "question": "What is your Employer Identification Number?",
+        "help": "For other entities this is your employer identification number. A sole proprietor with EIN may enter SSN or EIN.",
+        "choices": []
+      },
+      {
+        "id": "backup_crossout",
+        "question": "Have you been told you are subject to backup withholding?",
+        "help": "Cross out item 2 if you were notified you are subject to backup withholding. For real estate transactions item 2 does not apply.",
+        "choices": [
+          {
+            "value": "yes",
+            "label": "Yes, I was notified"
+          },
+          {
+            "value": "no",
+            "label": "No, I was not notified"
+          }
+        ]
+      },
+      {
+        "id": "certify",
+        "question": "Do you confirm your certification is true?",
+        "help": "Under penalties of perjury, I certify that: 1. The number shown on this form is my correct taxpayer identification number (or I am waiting for a number to be issued to me); and 2. I am not subject to backup withholding because (a) I am exempt from backup withholding, or (b) I have not been notified by the Internal Revenue Service (IRS) that I am subject to backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am no longer subject to backup withholding; and 3. I am a U.S. citizen or other U.S. person (defined below); and 4. The FATCA code(s) entered on this form (if any) indicating that I am exempt from FATCA reporting is correct.",
+        "choices": []
+      },
+      {
+        "id": "signature",
+        "question": "What is your full name as your signature?",
+        "help": "The line 1 person must sign for a disregarded entity. For a joint account only the TIN person signs when required.",
+        "choices": []
+      },
+      {
+        "id": "sign_date",
+        "question": "What date do you sign today?",
+        "help": "",
+        "choices": []
+      }
+    ]
+  }
+}

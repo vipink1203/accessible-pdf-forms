@@ -1,0 +1,53 @@
+- main:
+  - heading "Form W-9, page 1" [level=1]
+  - text: 1 Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner's name on line 1, and enter the business/disregarded entity's name on line 2.)
+  - textbox "1 Name of entity/individual. An entry is required. (For a sole proprietor or disregarded entity, enter the owner's name on line 1, and enter the business/disregarded entity's name on line 2.)"
+  - text: 2 Business name/disregarded entity name, if different from above.
+  - textbox "2 Business name/disregarded entity name, if different from above."
+  - group "3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.":
+    - text: 3a Check the appropriate box for federal tax classification of the entity/individual whose name is entered on line 1. Check only one of the following seven boxes.
+    - checkbox "3a Individual/sole proprietor"
+    - text: 3a Individual/sole proprietor
+    - checkbox "3a C corporation"
+    - text: 3a C corporation
+    - checkbox "3a S corporation"
+    - text: 3a S corporation
+    - checkbox "3a Partnership"
+    - text: 3a Partnership
+    - checkbox "3a Trust/estate"
+    - text: 3a Trust/estate
+    - checkbox "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)"
+    - text: 3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)
+    - checkbox "3a Other (see instructions)"
+    - text: 3a Other (see instructions)
+  - text: 3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)
+  - textbox "3a LLC. Enter the tax classification (C = C corporation, S = S corporation, P = Partnership)"
+  - text: 3a Other (see instructions)
+  - textbox "3a Other (see instructions)"
+  - checkbox "3b If on line 3a you checked \"Partnership\" or \"Trust/estate,\" or checked \"LLC\" and entered \"P\" as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions"
+  - text: 3b If on line 3a you checked "Partnership" or "Trust/estate," or checked "LLC" and entered "P" as its tax classification, and you are providing this form to a partnership, trust, or estate in which you have an ownership interest, check this box if you have any foreign partners, owners, or beneficiaries. See instructions 4 Exempt payee code (if any)
+  - textbox "4 Exempt payee code (if any)"
+  - text: 4 Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any)
+  - textbox "4 Exemption from Foreign Account Tax Compliance Act (FATCA) reporting code (if any)"
+  - text: 5 Address (number, street, and apt. or suite no.). See instructions.
+  - textbox "5 Address (number, street, and apt. or suite no.). See instructions."
+  - text: Requester's name and address (optional)
+  - textbox "Requester's name and address (optional)"
+  - text: 6 City, state, and ZIP code
+  - textbox "6 City, state, and ZIP code"
+  - text: 7 List account number(s) here (optional)
+  - textbox "7 List account number(s) here (optional)"
+  - text: Social security number
+  - textbox "Social security number"
+  - text: Social security number
+  - textbox "Social security number"
+  - text: Social security number
+  - textbox "Social security number"
+  - text: Employer identification number
+  - textbox "Employer identification number"
+  - text: Employer identification number
+  - textbox "Employer identification number"
+  - text: Signature of U.S. person
+  - textbox "Signature of U.S. person"
+  - text: Date
+  - textbox "Date"
