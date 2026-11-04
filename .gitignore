@@ -10,6 +10,7 @@ __pycache__/
 
 # Made on your computer when you run the app or the tests.
 src/out/e2e/
+src/out/demo/
 src/out/forms/
 src/out/debug/
 src/out/accents/

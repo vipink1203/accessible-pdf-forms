@@ -80,7 +80,11 @@ def interview(form: Form, code: str) -> dict:
                 shared = json.loads((OUT / f"interview.{code}.json").read_text())
                 translation = translate_form(code, source, form.folder / f"translation-{code}-raw.json", shared)
                 path.write_text(json.dumps(speakable(code, source, translation), indent=2, ensure_ascii=False))
-        form.langs[code] = json.loads(path.read_text())
+        data = json.loads(path.read_text())
+        if form.folder != OUT:  # the assistant's phrases are the sample's, which may be newer
+            shared = json.loads((OUT / f"interview.{code}.json").read_text())
+            data["phrases"], data["yes_words"] = shared["phrases"], shared["yes_words"]
+        form.langs[code] = data
     return form.langs[code]
 
 

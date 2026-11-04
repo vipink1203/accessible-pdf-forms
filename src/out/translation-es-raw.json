@@ -39,7 +39,7 @@
     "not_confirmed": "No confirmado",
     "optional": "Esta es opcional. Diga omitir para dejarla en blanco.",
     "optional_typed": "Opcional: déjelo en blanco y elija Siguiente para omitir.",
-    "options": "Sus opciones son: {options}.",
+    "options": "Diga el número o el nombre. {options}.",
     "paused": "En pausa. Pulse Espacio para seguir.",
     "preview_alt": "Imagen del formulario ya llenado, para que un ayudante que ve lo revise.",
     "privacy": "Sus respuestas habladas se envían a los modelos Muse de Meta para entenderlas. Meta no las usa para entrenar sus modelos, pero puede guardarlas según sus condiciones. Nada se guarda en esta computadora.",
@@ -90,7 +90,8 @@
     "prep_failed_many": "Este formulario tiene más de {limit} espacios para llenar, y eso es demasiado por ahora.",
     "prep_failed_big": "Este archivo pesa más de 20 MB, y eso es demasiado grande por ahora.",
     "prep_failed_service": "No pude comunicarme con los modelos Muse de Meta. Inténtelo de nuevo en un minuto.",
-    "prep_failed_broken": "Algo salió mal al leer este formulario."
+    "prep_failed_broken": "Algo salió mal al leer este formulario.",
+    "noise_hint": "Si hay gente hablando cerca, aléjese o use audífonos con micrófono."
   },
   "steps": [
     {
@@ -284,12 +285,13 @@
     "privacy": "Your spoken answers are sent to Meta's Muse models to be understood. Meta does not use them to train its models, but may keep them as its terms allow. Nothing is saved on this computer.",
     "how_to": "After the beep, answer. You can also say: repeat, go back, skip, explain, or pause. Press Escape to pause at any time, and Space to skip ahead.",
     "question_n": "Question {n} of {total}",
-    "options": "Your options are: {options}.",
+    "options": "Say the number or the name. {options}.",
     "optional": "This one is optional. Say skip to leave it blank.",
     "heard": "I heard: {answer}. Is that right?",
     "unclear": "Sorry, I didn't understand that.",
     "no_speech": "I didn't hear anything.",
     "again": "Please say it again.",
+    "noise_hint": "If other people are talking nearby, move away from them, or use a headset microphone.",
     "digits_count": "I need {need} digits, and I heard {got}.",
     "required": "This answer is required.",
     "skipped": "Skipped.",

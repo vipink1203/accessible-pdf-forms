@@ -1,4 +1,4 @@
-# Design: Accessible PDF forms
+# Design: Fill Aloud
 
 Status: draft v0.3 (2026-11-02).
 One form proven end to end (IRS W-9, page 1), by keyboard and by voice in English and Spanish; upload of any PDF proven on three forms by keyboard; everything below the proof section is the plan.
@@ -70,7 +70,7 @@ The diagram shows the numbered steps.
 | D10 | An answer counts only after it is read back and the person says yes; plain yes and no are understood without a model call | Speech-to-text repeats words; a blind person can't see the mistake |
 | D11 | Translation is one cached Muse call per language; the certification is read in translation with a note that the English text is what they certify | Same form for everyone; the legal words stay the form's own |
 | D12 | Voice mode is a choice on the start screen, next to screen-reader mode | Screen-reader users keep their own reader; others get a voice; nobody gets both talking at once |
-| D13 | Each spoken reply is transcribed twice in parallel; Muse Spark reads both | The transcriber's mistakes are partly random; on 12 real accented speakers this halved word errors, for one extra transcription and no extra Muse Spark call |
+| D13 | Each spoken reply is transcribed twice in parallel; Muse Spark reads both | The transcriber's mistakes are partly random; on 10 accented speakers (of 12 tried) it cut word errors from 10.3% to 4.1%, for one extra transcription and no extra Muse Spark call |
 | D14 | The person can pause at any time (Pause button, Escape, or saying "pause"); Continue re-asks the question they were on, with every answer kept | Nobody should have to listen to a machine they can't stop |
 | D15 | After two silences, or three replies that give no answer, the page stops and offers Continue or typing; on the second miss of a text answer it suggests spelling it | Asking forever is the worst failure for a voice app; names are what speech-to-text gets wrong most |
 | D16 | The recorder keeps half a second before speech starts, waits 1.8 s of quiet before ending, measures "speech" against the room's own noise, and sends 24 kHz audio | First words were at risk of clipping, and people who pause to find a word were cut off at 1.2 s |
@@ -83,6 +83,7 @@ The diagram shows the numbered steps.
 | D23 | Each uploaded form is kept by the start of its SHA-256, and its Spanish is written the first time someone picks Spanish | The same file never pays twice, and nobody pays for a language nobody used |
 | D24 | Limits: 20 MB, 10 pages with blanks, 150 fields; the interview may use up to 100,000 output tokens and stops at once if cut off | A 50-field form took 30,264 output tokens; a cut-off answer is never retried with the same budget, which would pay twice for the same failure |
 | D25 | When a form says to cross out printed text in some case, the interview asks whether the case applies, and "yes" fills a field of its own, kind "strike", placed on that text's lines | Crossing out is part of filling the form; a blind person can't do it on paper, and a field reuses the same read-back, review and fill as every other answer |
+| D26 | Voice choices are read with numbers and a number picks one in code; a reply with no words, a sentence that only shares a word with a choice, or two hearings that disagree on digits is unclear, never a guess, except that when one hearing is the other with one digit said twice, the shorter is taken; after two misses it suggests moving away from people talking, and when it pauses, Continue has the focus | An owner test stalled on the tax question: a conversation nearby was heard, Spark guessed "Other", and after three misses the page paused with nothing saying what to do next; a doubled digit in one hearing once turned 8 spoken digits into 9, and treating every such disagreement as unclear then turned away a correctly spoken SSN in 2 of 4 tries |
 
 ## 6. Proof on one form
 

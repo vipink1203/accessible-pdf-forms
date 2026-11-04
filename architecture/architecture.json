@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "architecture",
   "meta": {
-    "title": "Accessible PDF forms: any PDF form becomes a guided interview",
+    "title": "Fill Aloud: any PDF form becomes a guided interview",
     "output": "projects/accessible-pdf-forms/architecture/architecture.html",
     "locale": "en",
     "quality_profile": "showcase",
@@ -418,7 +418,7 @@
         "IRS W-9: 23 of 23 blanks found and placed, every quote word for word",
         "Voice runs pass in English and Spanish, with pause and resume",
         "Upload: W-9 and W-4 (fillable), and the W-4 made flat, filled correctly",
-        "12 real accents heard with about 4% word errors"
+        "Accented speech: hearing each reply twice cut word errors from 10% to 4%"
       ]
     },
     {

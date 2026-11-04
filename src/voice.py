@@ -82,7 +82,10 @@ Actions:
   is still an answer).
 
 How to write value for an answer:
-- choice: exactly one of the listed values (the value, not the label), or use unclear.
+- choice: exactly one of the listed values (the value, not the label), or use unclear. The choices are read aloud
+  with numbers, so a number picks that choice ("two", "number 2", "the second one"). Use answer only when the reply
+  names, describes or numbers one choice. Speech-to-text also picks up other people talking nearby: a sentence about
+  something else that merely shares a word with a choice ("another" and "Other") is unclear, never a guess.
 - digits: only the digits 0 to 9 in the order spoken. "double five" is 55, "oh" is 0. Never add or drop a digit,
   and give every digit you heard even when the count looks wrong: the assistant checks the count itself.
 - text: what to write on the form, as the person said it: drop lead-ins such as "my name is" or "it's",
@@ -116,8 +119,8 @@ def context(form: dict, mode: str, step_id: str, pending: str) -> str:
         return f'The assistant read out a certification and asked: "{question}" yes means they certify.'
     out = f'The question: "{question}"\nAnswer kind: {s["answer"]}'
     if s["answer"] == "choice":
-        out += "\nChoices (value: label):\n" + "\n".join(
-            f"- {c['value']}: {c.get('label_en', c['label'])} / {c['label']}" for c in s["choices"])
+        out += "\nChoices (number. value: label):\n" + "\n".join(
+            f"- {n}. {c['value']}: {c.get('label_en', c['label'])} / {c['label']}" for n, c in enumerate(s["choices"], 1))
     if s["answer"] == "digits":
         out += f"\nIt needs {sum(form['fields'][f]['cells'] for f in s['fields'])} digits."
     if mode == "confirming":
@@ -207,6 +210,22 @@ def yes_or_no(transcript: str, form: dict) -> str | None:
     return None
 
 
+def same_digits(digits: list[str]) -> str:
+    """The digits every hearing agrees on, or "".
+
+    The transcriber sometimes says one digit twice ("seven eight eight nine"); when one hearing is
+    the other with one digit doubled, the shorter is what was said."""
+    values = set(digits)
+    if len(values) == 1:
+        return digits[0]
+    if len(values) == 2:
+        short, long = sorted(values, key=len)
+        if len(long) == len(short) + 1 and any(
+                long[i] == long[i - 1] and long[:i] + long[i + 1:] == short for i in range(1, len(long))):
+            return short
+    return ""
+
+
 def hear(wav: bytes, form: dict, mode: str, step_id: str, pending: str = "") -> dict:
     """One spoken reply to {transcript, action, value, step, ms, cost}."""
     started = time.monotonic()
@@ -219,13 +238,19 @@ def hear(wav: bytes, form: dict, mode: str, step_id: str, pending: str = "") -> 
     transcripts = [t for h in heard if (t := h.get("transcript", "").strip())]
     transcript = transcripts[0] if transcripts else ""
     quick = {yes_or_no(t, form) for t in transcripts}
-    digits = [d for t in transcripts if (d := spoken_digits(t))] if step.get("answer") == "digits" else []
-    if not transcripts:
-        result = {"action": "silence", "value": "", "step": ""}
+    digits = [d for t in transcripts if (d := spoken_digits(t))] if step.get("answer") in ("digits", "choice") else []
+    picked = {int(d) for d in digits if 1 <= int(d) <= len(step.get("choices", []))} if step.get("answer") == "choice" else set()
+    if not transcripts:  # the page heard sound, but there were no words in it
+        result = {"action": "unclear", "value": "", "step": ""}
+    elif mode == "question" and len(digits) == len(transcripts) and len(picked) == 1 and len(set(digits)) == 1:
+        result = {"action": "answer", "value": step["choices"][picked.pop() - 1]["value"], "step": ""}  # "two" picks choice 2
     elif mode in ("confirming", "certify", "review") and len(quick) == 1 and None not in quick:
         result = {"action": quick.pop(), "value": "", "step": ""}
-    elif mode in ("question", "confirming") and len(digits) == len(transcripts) and len(set(digits)) == 1:
-        result = {"action": "answer", "value": digits[0], "step": ""}
+    elif (mode in ("question", "confirming") and step.get("answer") == "digits" and len(digits) == len(transcripts)
+          and (agreed := same_digits(digits))):
+        result = {"action": "answer", "value": agreed, "step": ""}
+    elif mode in ("question", "confirming") and step.get("answer") == "digits" and len(digits) == len(transcripts) > 1:
+        result = {"action": "unclear", "value": "", "step": ""}  # the two hearings disagree on the digits: never pick one
     else:
         today = datetime.date.today().isoformat()  # "today" means a different date tomorrow
         key = hashlib.sha256(json.dumps([sorted(transcripts), form["lang"]["code"], mode, step_id, pending, today]).encode())
@@ -239,7 +264,7 @@ def hear(wav: bytes, form: dict, mode: str, step_id: str, pending: str = "") -> 
                 CACHE.mkdir(parents=True, exist_ok=True)
                 cached.write_text(json.dumps(raw, ensure_ascii=False))
         result = checked(raw, form, mode, step_id)
-        if result["action"] == "answer" and digits and result["value"] not in digits:
+        if result["action"] == "answer" and step.get("answer") == "digits" and digits and result["value"] not in digits:
             result["value"] = digits[0]  # what was said, not what the count wanted
     return result | {"transcript": transcript, "ms": round((time.monotonic() - started) * 1000), "cost": round(cost, 6)}
 

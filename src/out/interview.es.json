@@ -630,7 +630,7 @@
     "not_confirmed": "No confirmado",
     "optional": "Esta es opcional. Diga omitir para dejarla en blanco.",
     "optional_typed": "Opcional: déjelo en blanco y elija Siguiente para omitir.",
-    "options": "Sus opciones son: {options}.",
+    "options": "Diga el número o el nombre. {options}.",
     "paused": "En pausa. Pulse Espacio para seguir.",
     "preview_alt": "Imagen del formulario ya llenado, para que un ayudante que ve lo revise.",
     "privacy": "Sus respuestas habladas se envían a los modelos Muse de Meta para entenderlas. Meta no las usa para entrenar sus modelos, pero puede guardarlas según sus condiciones. Nada se guarda en esta computadora.",
@@ -681,7 +681,8 @@
     "prep_failed_many": "Este formulario tiene más de {limit} espacios para llenar, y eso es demasiado por ahora.",
     "prep_failed_big": "Este archivo pesa más de 20 MB, y eso es demasiado grande por ahora.",
     "prep_failed_service": "No pude comunicarme con los modelos Muse de Meta. Inténtelo de nuevo en un minuto.",
-    "prep_failed_broken": "Algo salió mal al leer este formulario."
+    "prep_failed_broken": "Algo salió mal al leer este formulario.",
+    "noise_hint": "Si hay gente hablando cerca, aléjese o use audífonos con micrófono."
   },
   "yes_words": [
     "sí",

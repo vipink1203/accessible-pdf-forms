@@ -1,7 +1,7 @@
 [project]
-name = "accessible-pdf-forms"
+name = "fill-aloud"
 version = "0.1.0"
-description = "Turn a flat PDF form into a guided, screen-reader-friendly interview and write the answers back onto the original."
+description = "Fill in any PDF form by talking: a guided voice or screen-reader interview that writes the answers onto the original form."
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",

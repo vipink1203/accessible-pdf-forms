@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guided form</title>
+<title>Fill Aloud</title>
 <style>
   /* Atkinson Hyperlegible Next: drawn by the Braille Institute so low-vision readers can tell letters apart. */
   @font-face { font-family: "Atkinson Hyperlegible Next"; src: url(/font.woff2) format("woff2");
@@ -256,10 +256,23 @@ function spoken(s, a) {
   return s.answer === "digits" ? display(s, a).map(p => p.split("").join(" ")).join(", ") : display(s, a);
 }
 
+// The total can only go down: for a question not answered yet, count the answer that brings the most follow-ups.
+function total() {
+  const branches = new Map();
+  for (const s of steps) {
+    const src = s.show_if.step;
+    if (!src || visible(s) || answers[src] !== undefined || !visible(byId(src))) continue;
+    const counts = branches.get(src) ?? new Map();
+    for (const v of s.show_if.values) counts.set(v, (counts.get(v) ?? 0) + 1);
+    branches.set(src, counts);
+  }
+  return shown().length + [...branches.values()].reduce((n, c) => n + Math.max(...c.values()), 0);
+}
+
 function progress(s) {
-  const list = shown(), n = list.indexOf(s) + 1;
-  return {n, total: list.length, html: `<p class="progress" id="progress">${esc(fmt("question_n", {n, total: list.length}))}</p>
-    <div class="bar" aria-hidden="true"><span style="width:${(n - 1) / list.length * 100}%"></span></div>`};
+  const n = shown().indexOf(s) + 1, all = total();
+  return {n, total: all, html: `<p class="progress" id="progress">${esc(fmt("question_n", {n, total: all}))}</p>
+    <div class="bar" aria-hidden="true"><span style="width:${(n - 1) / all * 100}%"></span></div>`};
 }
 
 // The form's own English words, shown on request.
@@ -280,7 +293,7 @@ function setLanguage(code) {
   steps = form.steps;
   P = form.phrases;
   document.documentElement.lang = form.lang.tag;
-  document.title = `${form.title} - ${P.guided}`;
+  document.title = `${form.title} - ${P.guided} - Fill Aloud`;
   document.getElementById("title").textContent = `${form.title}, ${P.guided}`;
 }
 
@@ -315,7 +328,7 @@ function pick() {
   history.replaceState(null, "", location.pathname);
   P = base.en.phrases;
   document.documentElement.lang = base.en.lang.tag;
-  document.title = P.pick_title;
+  document.title = `${P.pick_title} - Fill Aloud`;
   document.getElementById("title").textContent = "";
   render(LANGS.map(code => {
     const p = base[code].phrases;
@@ -594,9 +607,21 @@ function pickVoice(tag) {
   return local.find(v => lang(v) === tag) || local.find(v => lang(v).split("-")[0] === tag.split("-")[0]);
 }
 
+// Speak sentence by sentence; "U.S." does not end a sentence, and a numbered list ("1. ... 2. ...") is read item by item.
+function sentences(text) {
+  let k = 1;
+  const marked = String(text).replace(/(^|\s)(\d)\.(?=\s)/g, (m, sp, d) => +d === k ? (k++, `\n${d}.`) : m);
+  const out = [];
+  for (const p of marked.split(/(?<=[.!?:])\s+|\n/).map(p => p.trim()).filter(Boolean)) {
+    if (out.length && /(?:\b[A-Z]\.)+$|^\d\.$/.test(out.at(-1))) out[out.length - 1] += " " + p;
+    else out.push(p);
+  }
+  return out;
+}
+
 function say(text, tag = form.lang.tag) {
   const voice = tag === form.lang.tag ? V.voice : V.voiceEn;
-  const parts = String(text).split(/(?<=[.!?:])\s+/).filter(p => p.trim());
+  const parts = sentences(text);
   setState("speaking");
   return parts.reduce((chain, part) => chain.then(() => new Promise(done => {
     if (V.hush || !voice) return done();
@@ -777,6 +802,7 @@ async function pause(g, message, resume) {
   alive(g);
   const mic = V.stream?.getAudioTracks()[0]?.label;
   setState("paused", message === P.mic_silent && mic ? `${message} (${mic})` : message);
+  screen.querySelector("#vpause")?.focus();  // Enter or Space carries on; a screen reader says where they are
 }
 
 async function startVoice() {
@@ -837,7 +863,7 @@ function questionPrompt(s) {
   let text = `${fmt("question_n", {n, total})}. ${s.question}`;
   if (s.answer === "confirm") return `${text} ${P.certify_intro} ${s.help} ${P.certify_note} ${P.certify_ask}`;
   if (s.help) text += ` ${s.help}`;
-  if (s.answer === "choice") text += ` ${fmt("options", {options: s.choices.map(c => c.label).join(", ")})}`;
+  if (s.answer === "choice") text += ` ${fmt("options", {options: s.choices.map((c, i) => `${i + 1}, ${c.label}`).join(". ")})}`;
   if (!s.required && !/optional/i.test(s.help_en || s.help)) text += ` ${P.optional}`;
   return text;
 }
@@ -892,8 +918,8 @@ async function askStep(g, index) {
       problem = "";
     }
     if (++fails >= 3) return pause(g, P.stuck, V.here);
-    const hint = s.answer === "text" && fails === 2 ? P.spell_hint : "";
-    await say([problem, hint, s.answer === "confirm" ? P.certify_ask : P.again].filter(Boolean).join(" "));
+    const hints = fails === 2 ? [s.answer === "text" ? P.spell_hint : "", P.noise_hint] : [];
+    await say([problem, ...hints, s.answer === "confirm" ? P.certify_ask : P.again].filter(Boolean).join(" "));
   }
 }
 

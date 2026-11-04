@@ -53,7 +53,7 @@ SCRIPTS = {
             ("question", "name2", SILENCE, None),
             ("question", "name2", SILENCE, None),  # second silence: the page pauses; Space resumes
             ("question", "name2", "Skip.", None),
-            ("question", "taxclass", "I'm a sole proprietor.", None),
+            ("question", "taxclass", "One.", None),  # choices are read with numbers; a number picks one
             ("confirming", "taxclass", "Yes, that's right.", "individual"),
             ("question", "address", "Twelve hundred Elm Street, apartment four.", None),
             ("confirming", "address", "Yes.", ADDRESS),
@@ -77,7 +77,9 @@ SCRIPTS = {
         ],
         "on_pdf": ["Jordan Rivera", "1200 Elm Street", "Springfield", "62701", TODAY, "X"],
         "boxes": {18: "123", 19: "45", 20: "6789"},
-        "said": ["Meta does not use them to train", "1 2 3, 4 5, 6 7 8 9", "I need 9 digits, and I heard 8"],
+        # the transcriber sometimes doubles a digit in one of its two hearings; then the reply is asked again
+        "said": ["Meta does not use them to train", "1 2 3, 4 5, 6 7 8 9",
+                 ("I need 9 digits, and I heard 8", "Sorry, I didn't understand that.")],
     },
     "es": {
         "voice": "Paulina",
@@ -248,7 +250,7 @@ def run(browser, code: str) -> list[str]:
     (SHOTS / f"voice-{code}-spoken.json").write_text(json.dumps(spoken, indent=2, ensure_ascii=False))
     said = " ".join(u["text"] for u in spoken)
     for want in script["said"]:
-        if want not in said:
+        if not any(w in said for w in (want if isinstance(want, tuple) else (want,))):
             failures.append(f"never said {want!r}")
     if any(u["voice"] == "Cloud Spanish" for u in spoken):
         failures.append("spoke with a cloud voice")
@@ -327,17 +329,22 @@ def run_pausing(browser) -> list[str]:
     tab.click("#vpause")
     turn = listening(tab, turn)
 
-    # 4. Three replies that are no answer: it stops asking and lets the person choose.
+    # 4. Three replies that are no answer, here someone else talking nearby (from a real session, where
+    # "another" once became the answer "Other"): it never guesses, stops asking, and lets the person choose.
     tab.evaluate("b64 => window.__play(b64)", clip("Skip.", "Samantha"))
     turn = listening(tab, turn)
     check("on the tax classification", state() == ["listening", "taxclass"])
     for k in range(3):
-        tab.evaluate("b64 => window.__play(b64)", clip("Purple elephants are dancing on the roof.", "Samantha"))
+        tab.evaluate("b64 => window.__play(b64)", clip("Are you allowed another conjunction?", "Samantha"))
         if k < 2:
             turn = listening(tab, turn)
     tab.wait_for_function("document.body.dataset.state === 'paused'", timeout=30_000)
     stuck = tab.evaluate("P.stuck")
     check("after three replies that are no answer, it pauses", state() == ["paused", "taxclass"])
+    check("and never took one as an answer", tab.evaluate("answers.taxclass") is None)
+    check("it suggests moving away from people talking",
+          "other people are talking nearby" in tab.evaluate("window.__spoken.map(u => u.text).join(' ')"))
+    check("Continue has the focus, so Enter carries on", tab.evaluate("document.activeElement.id") == "vpause")
     check("and says what the person can do",
           tab.evaluate("window.__spoken.map(u => u.text).join(' ')").endswith(stuck))
     tab.wait_for_timeout(500)
